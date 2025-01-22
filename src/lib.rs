@@ -18,7 +18,6 @@ use bevy::{
             ShaderType, TextureFormat, TextureSampleType, UniformBuffer,
         },
         renderer::{RenderDevice, RenderQueue},
-        texture::BevyDefault,
         view::ViewUniform,
         Extract, Render, RenderApp, RenderSet,
     },
@@ -187,6 +186,7 @@ impl FromWorld for EdgeDetectionPipeline {
                     depth_stencil: None,
                     multisample: MultisampleState::default(),
                     push_constant_ranges: vec![],
+                    zero_initialize_workgroup_memory: false,
                 });
 
         Self {
